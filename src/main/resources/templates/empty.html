@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<html>
+    
+<head>
+    <meta charset="ISO-8859-1">
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+</head>
+
+<body>
+    <a class="back-button" href="../">Go Back</a>
+    <h1 class="secondtitle" th:text="${title}"></h1>
+    <h1 class="thirdtitle" th:text="${T(java.lang.String).format('You can choose the options below to see the details about earthquakes happened in the last %s days',days)}"></h1>
+
+    <ul>
+        <li class="listElement" th:each="country : ${countryList}">
+            <a style="color:black;text-decoration: underline;" th:href="@{/result/(country=${country},days=${days})}" th:text="${country}">Default</a>
+        </li>
+    </ul>
+</body>
+
+</html>

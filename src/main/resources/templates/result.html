@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<style>
+        .table {
+        counter-reset: serial-number; /* Set the serial number counter to 0 */
+    }
+    
+        .table td:first-child:before {
+            counter-increment: serial-number; /* Increment the serial number counter */
+            content: counter(serial-number); /* Display the counter */
+        }
+    </style>
+<html>
+<head>
+    <meta charset="ISO-8859-1">
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+</head>
+<body>
+    <a class="back-button" href="../">Go Back</a>
+
+<h1 class="secondtitle" th:text="${title}"></h1>
+    <table >
+        <thead>
+            <tr>
+                <th>Number</th>
+                <th>Country</th>
+                <th>Place</th>
+                <th>Magnitude</th>
+                <th>Date</th>
+                <th>Time</th>
+            </tr>
+        </thead>
+    <tbody>
+       <tr th:each="element : ${list}">
+                <td th:text="${elementStat.index+1}"></td>
+                <td th:text="${element.properties.country}"></td>
+                <td th:text="${element.properties.place}"></td>
+                <td th:text="${element.properties.mag}"></td>
+                <td th:text="${element.properties.date}"></td>
+                <td th:text="${element.properties.clock}"></td>
+        </tr>
+    </tbody>
+        <tr>
+    </table>
+
+  
+</body>
+</html>

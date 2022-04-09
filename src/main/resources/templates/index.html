@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="ISO-8859-1">
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+</head>
+
+<body>
+    <h1 class="title">What the Quake ?</h1>
+    <h1 class="errortitle" th:text="${exceedMessage}"></h1>
+    <div class="parent">
+        <div class="child">
+            <form action="/result" class="countryform">
+
+                <label for="country" class="question">Country</label><br>
+                <input type="text" id="country" name="country"class="answer"><br>
+            
+                <label for="days" class="question">Passed Days</label><br>
+                <input type="text" id="days" name="days"class="answer"><br><br>
+            
+                <input type="submit" value="Get Result" class="answer">
+            </form> 
+        </div>
+    </div>
+
+</body>
+
+</html>
